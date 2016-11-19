@@ -1,8 +1,8 @@
 h5serv - REST-based service for HDF5 data
 ===========================================
 
-.. image:: https://travis-ci.org/HDFGroup/h5serv.svg?branch=develop
-    :target: https://travis-ci.org/HDFGroup/h5serv
+.. image:: https://travis-ci.org/drancom/h5serv.svg?branch=develop
+    :target: https://travis-ci.org/drancom/h5serv
 
 Introduction
 ------------
@@ -13,7 +13,7 @@ Websites
 --------
 
 * Main website: http://www.hdfgroup.org
-* Source code: https://github.com/HDFGroup/h5serv
+* Source code: https://github.com/drancom/h5serv
 * Mailing list: hdf-forum@lists.hdfgroup.org <hdf-forum@lists.hdfgroup.org>
 * Documentation: http://h5serv.readthedocs.org
 
@@ -29,10 +29,10 @@ Install Python (2.7 or later) and the following packages:
 * watchdog 0.8.3 or later
 * requests 2.3 or later (for client tests)
 
-Clone the hdf5-json project: ``git clone https://github.com/HDFGroup/hdf5-json.git`` .
+Clone the hdf5-json project: ``git clone https://github.com/drancom/hdf5-json.git`` .
 Next, cd to the hdf5-json folder and run: ``python setup.py install``.
 
-Clone this project: ``git clone https://github.com/HDFGroup/h5serv.git``.
+Clone this project: ``git clone https://github.com/drancom/h5serv.git``.
 
 Running the Server
 ------------------
@@ -56,7 +56,7 @@ Running with Docker
 To run h5serv as a docker container you just need to install Docker (no Python, h5py, etc. needed).
 
 * Install docker: https://docs.docker.com/installation/#installation.
-* Run the h5serv image: ``docker run -p 5000:5000 -d -v <mydata>:/data hdfgroup/h5serv`` where <mydata> is the folder path that contains any HDF5 files you want to made available through the h5serv REST API.  Since requests to the server can modify (or delete!) content, you probably want to create a new folder and copy files to it.
+* Run the h5serv image: ``docker run -p 5000:5000 -d -v <mydata>:/data dran/h5serv`` where <mydata> is the folder path that contains any HDF5 files you want to made available through the h5serv REST API.  Since requests to the server can modify (or delete!) content, you probably want to create a new folder and copy files to it.
 * Go to http://192.168.99.100:5000/ in your browser to verify the server is up and running (replace 192.168.99.100 with the IP address of the system or VM that is running the container).
 
 Writing Client Applications

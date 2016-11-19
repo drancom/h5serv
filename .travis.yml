@@ -12,17 +12,17 @@ python:
 install:
     - sudo apt-get update -qq
     - sudo apt-get install -qq libhdf5-serial-dev
-    - pip uninstall numpy -y 
+    - pip uninstall numpy -y
     - pip install numpy>=1.10.4
     - pip install h5py
     - pip install requests
     - pip install pytz
     - pip install tornado
     - pip install watchdog
-    - git clone https://github.com/HDFGroup/hdf5-json.git
+    - git clone https://github.com/drancom/hdf5-json.git
     - cd hdf5-json
     - python setup.py install
-    - cd .. 
+    - cd ..
 
 script:
     - python test/testall.py --unit
