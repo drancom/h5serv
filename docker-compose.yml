@@ -1,0 +1,21 @@
+version: '2'
+services:
+  h5serv:
+    build: .
+    image: dran/h5serv:latest     # pulled from hdfgroup/h5serv
+    image: dran/h5serv:0.1.0      # pulled from hdfgroup/h5serv
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/datadocker
+      - ./log:/log
+    depends_on:
+      - h5serv-pkg
+  h5serv-pkg:
+    build:
+      context: .
+      dockerfile: Dockerfile-pkg
+    image: dran/h5serv-pkg:latest # pulled from hdfgroup/h5serv
+    image: dran/h5serv-pkg:0.1.0
+
+

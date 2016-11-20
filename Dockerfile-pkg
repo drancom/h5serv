@@ -1,0 +1,14 @@
+FROM hdfgroup/hdf5lib:1.8.16
+MAINTAINER Byoungkwon An <kwon.an@autodesk.com>
+
+RUN cd /usr/local/src                                    ; \
+    pip install --upgrade pip                            ; \
+    pip install tornado                                  ; \
+    pip install requests                                 ; \
+    pip install pytz                                     ; \
+    pip install watchdog                                 ; \
+    pip install pymongo
+WORKDIR /usr/local/src         
+RUN git clone https://github.com/drancom/hdf5-json.git   ; \
+    cd hdf5-json                                         ; \
+    python setup.py install

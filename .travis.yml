@@ -10,22 +10,22 @@ python:
   - "3.5"
 
 install:
-    - sudo apt-get update -qq
-    - sudo apt-get install -qq libhdf5-serial-dev
-    - pip uninstall numpy -y
-    - pip install numpy>=1.10.4
-    - pip install h5py
-    - pip install requests
-    - pip install pytz
-    - pip install tornado
-    - pip install watchdog
-    - git clone https://github.com/drancom/hdf5-json.git
-    - cd hdf5-json
-    - python setup.py install
-    - cd ..
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq libhdf5-serial-dev
+  - pip uninstall numpy -y
+  - pip install numpy>=1.10.4
+  - pip install h5py
+  - pip install requests
+  - pip install pytz
+  - pip install tornado
+  - pip install watchdog
+  - git clone https://github.com/drancom/hdf5-json.git
+  - cd hdf5-json
+  - python setup.py install
+  - cd ..
 
 script:
-    - python test/testall.py --unit
-    - python server/app.py >app.out &
-    - sleep 5
-    - python test/testall.py --integ
+  - python test/testall.py --unit
+  - python server/app.py >app.out &
+  - sleep 5
+  - python test/testall.py --integ
