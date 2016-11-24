@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./data:/datadocker
+      - ./data:/data
       - ./log:/log
     depends_on:
       - h5serv-pkg

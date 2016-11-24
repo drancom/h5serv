@@ -15,3 +15,4 @@ EXPOSE 5000
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["--datapath=/data","--domain=data.byoungkwonapi.com","--log_file="]
